@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}
+user_login 
+{% endblock %}
+
+{% block content %}
+
+
+
+    <h2 class="text-center">Login</h2> 
+    <form method="post" action="{% url 'user_login' %}">
+        {% csrf_token %}
+        {{form}}
+        <button type="submit" class="btn btn-primery w-100">login</button>
+        <a href="{% url 'user_signup' %}">signup</a>
+        
+          
+        <!-- <button type="submit" class="btn btn-primery w-100" onclick=location.href="{% url 'user_login' %}">login</button>
+       
+        <a href="{% url 'user_signup' %}">signup</a> -->
+    
+     </form> 
+
+
+{% endblock %}
+
+
+
+<h1>Login</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+    <a href="{% url 'signup' %}">signup</a>
+</form>

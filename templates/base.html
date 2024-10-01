@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="">
+<style>
+
+  body{
+   
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    height: 100vh;
+    }
+
+  .task_container{
+    margin: 20px;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(207, 142, 142, 0.1);
+    padding: 20px;    
+    }
+  
+  .task_header{
+    border-radius: 10px;
+    background-color: rgb(233, 188, 229);
+    text-align: center;
+    margin-bottom: 20px;
+    }
+
+  .list_group_item{
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .message-box{
+    text-align: center;
+    padding: 20px;
+    background-color: blueviolet;
+    border: 1px solid black;
+    border-radius:5px ;
+    color: antiquewhite;
+  }
+  .login_container{
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(183, 197, 228);
+    border: 1px solid black;
+    border-radius:5px ;
+  }
+  
+</style>
+
+</head>
+<body>
+  <div class="task_container">
+    {% block content %}
+    {% endblock %}
+  </div>
+  <nav class="navbar bg-body-tertiary fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">TODO HUB</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'addtask' %}">Addtask</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'displya' %}">displya task</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{% url 'user_login' %}">login</a></li>
+                <li><a class="dropdown-item" href="{% url 'logout' %}">logout</a></li>
+                <li><a class="dropdown-item" href="{% url 'user_signup' %}">signup</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex mt-3" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script> 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

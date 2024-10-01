@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}
+Logout 
+{% endblock %}
+
+{% block content %}
+
+<div class="message-box">
+    <h1>Logout successful.</h1>
+    <p>please close the session window.</p>
+    <a href="{%  url 'home' %}">Back</a>
+</div>
+
+{% endblock %}
